@@ -1,0 +1,836 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* avoid nav overlap on scroll */
+}
+
+/* wanted to reset default body */
+body {
+  background-color: #fff;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* containers for text styles */
+.container {
+  width: min(800px, 90%);
+}
+
+.container2 {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: min(800px, 90%);
+}
+
+/* nav styles */
+nav {
+  background-color: #225555;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.active a {
+  background-color: #fff;
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+/* both responsive nav for mobile and tablet */
+@media screen and (max-width: 600px) {
+  nav {
+    padding: 10px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .active a {
+    border-bottom: none; /* remove border for mobile */
+  }
+}
+
+/* tablets */
+@media screen and (max-width: 768px) { 
+  #Home h1, h1 {
+    font-size: 3rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .skills-list li {
+    padding: 10px;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+  }
+
+  .exper-item {
+    padding: 10px;
+    font-size: 0.95rem;
+    word-wrap: break-word;
+  }
+}
+
+/* bg image container */
+.bg {
+  height: 100vh; 
+  width: 100vw; /* i struggled semi to fix this photo LOL, yet i finally got it after an hr */
+  background-image: url("https://i.pinimg.com/736x/98/43/b4/9843b4da17d4a90aebe486aa608d36da.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+/* photo div lines */
+.photo-divider { /* i wanted a line underneath photo cause it'll be cute */
+  border: none;
+  height: 3px; 
+  background-color: pink;
+  width: 100%; 
+  margin: 0 auto; 
+  display: block;
+  justify-content: center;
+  min-width: 150px;
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center; 
+  align-items: center; 
+  display: flex; 
+}
+
+.photo-divider2 { /* i wanted a line on top of the footer */
+  border: none;
+  height: 3px; 
+  background-color: pink;
+  width: 100%; 
+  margin: 0 auto; 
+  display: block;
+  justify-content: center;
+  margin-bottom: -20px; /* space below the footer */
+}
+
+/* responsive style for photo-divider */
+@media screen and (max-width: 768px) {
+  .photo-divider {
+    width: 100%;
+  }
+}
+
+/* headings */
+#Home h1 {
+  margin: 0;
+  font-size: 15rem;
+  font-weight: bold;
+  color: black;
+  font-family: Impact;
+  text-shadow: 5px 3px 4px rgba(0, 0, 0, 0.6);
+  opacity: 0.80;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-family: Cambria;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+}
+
+h4 {
+  margin-bottom: 10px;
+  font-family: 'Rubik Bubbles', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* sections & lists */
+section {
+  margin-top: 40px;
+}
+
+.exper-list {
+  display: flex;          
+  flex-wrap: wrap;        
+  gap: 20px;          
+  justify-content: center;
+  padding: 20px 30px 30px 25px; 
+  background-color: #225555;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+}
+
+.exper-item {
+  background-color: #336b6b;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  flex: 1 1 200px; 
+  min-width: 150px;
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center; 
+  align-items: center; 
+  display: flex; 
+}
+
+/*  skills / projects / contact sections */
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #225555;
+  border-radius: 5px;
+  list-style: none;
+  justify-content: center;
+}
+
+.skills-list li {
+  background-color: #336b6b;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  flex: 1 1 200px; 
+  min-width: 150px;
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center; 
+  align-items: center; 
+  display: flex; /* i was trying to center the text in the box - struggling a bit */
+}
+
+.projects-list {
+  padding: 20px 30px 10px 40px;
+  background-color: #225555;
+  border-radius: 5px;
+  text-align: left;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+  gap: 20px;
+}
+
+.projects-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #336b6b;
+}
+
+.projects-list li:last-child {
+  border-bottom: none;
+}
+
+.connect-list {
+  list-style: none;
+  display: flex;      
+  gap: 40px;          
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.website-card {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+   position: relative; /* just to allow internal positioning */
+  z-index: 1; 
+}
+
+.website-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.website-content {
+  padding: 20px;
+}
+
+.website-content h2 {
+  margin-bottom: 10px;
+}
+
+.website-content p {
+  margin-bottom: 20px;
+}
+
+.website-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #225555;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.website-btn:hover {
+  background-color: #336b6b;
+}
+/* light/dark mode toggle*/
+.theme-switch {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  user-select: none;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  width: 50px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: pink; /* changed to pink for visibility */
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* theme modes */
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-mode nav {
+  background-color: black;
+}
+
+body.light-mode nav {
+  background-color: #225555;
+}
+
+body.dark-mode .nav-item a {
+  color: white;
+}
+
+body.dark-mode .nav-item a:hover {
+  background-color: #333;
+  color: pink;
+}
+
+body.dark-mode .active a {
+  background-color: #333;
+  color: pink;
+  border-bottom: 2px solid pink;
+}
+
+body.dark-mode .active a:hover {
+  background-color: #bad4d4;
+  color: white;
+}
+
+/* additional dark mode styles */
+/* ----------------------------- */
+
+/* weather section - dark mode */
+body.dark-mode #output {
+  background-color: #222;   
+  color: #eee;              
+  border-color: #ff66b2;
+}
+
+body.dark-mode #h4 {
+  color: #eee;              
+}
+body.dark-mode .website-card {
+  background-color: #5a5a5a;
+  color: #fff;
+}
+
+body.dark-mode .website-btn {
+  background-color: #ff66b2;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  #website {
+    padding: 30px 15px;
+  }
+
+  .website-card {
+    max-width: 100%;
+  }
+}
+/* leave a message - dark mode */
+body.dark-mode #leave-message {
+  background-color: #222;   
+  color: #eee;              
+  border-color: #ff66b2;
+}
+
+/* inputs and textarea text - dark mode */
+body.dark-mode #leave-message input,
+body.dark-mode #leave-message textarea {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #ff66b2;
+}
+
+body.dark-mode #leave-message button {
+  background-color: #ff66b2;
+  color: #121212;
+}
+
+body.dark-mode h2, body.dark-mode h3, body.dark-mode #Home h1 {
+  color: #ff66b2;
+}
+
+body.dark-mode .name, 
+body.dark-mode .important-text {
+  color: #ff66b2; 
+}
+
+/*footer styles*/
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #225555;  
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* leave a message section */
+#leave-message {
+  margin-top: 40px;
+  background-color: #f2f2f2;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+#leave-message form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#leave-message input,
+#leave-message textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+}
+
+#leave-message button {
+  background-color: #225555;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#leave-message button:hover {
+  background-color: #336b6b;
+}
+
+/* message section */
+.messages-section {
+  margin-top: 30px;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#messages ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#messages li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+}
+
+#messages li:last-child {
+  border-bottom: none;
+}
+
+/* weather section */
+.weather-container {
+   display: flex;
+  flex-direction: column;   
+  justify-content: center;  
+  align-items: center;      
+  gap: 15px;                
+  padding: 20px;
+  width: 80%;               
+  max-width: 320px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;             /* start hidden */
+  transition: right 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 100;
+  overflow-y: auto; 
+  background: linear-gradient(135deg, #ffedf0, #ffe0f7); 
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background-color: var(--panel-bg);
+  color: var(--panel-text);
+}
+
+.weather-container.open {
+  right: 0;            /* slide in */
+}
+
+.weather-container button {
+  background-color: #ff66b2;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 18px;
+  border-radius: 12px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.weather-container button:hover {
+  transform: scale(1.05);
+  background-color: #ff4c99;
+}
+
+.weather-toggle {
+  font-size: 1rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: pink;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.weather-emoji {
+  font-size: 3rem;          /* big enough to notice */
+  margin-bottom: 15px;      /* space from output */
+  transition: transform 0.3s ease;
+  animation: float 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); } /* float up */
+  100% { transform: translateY(0); }
+}
+
+/* Optional: add a hover bounce */
+.weather-emoji:hover {
+  transform: translateY(-10px);
+}
+
+#weather-data {
+  text-align: center;
+  font-size: 1rem; /* optional, makes it slightly bigger */
+}
+
+body.dark-mode {
+  --panel-bg: #222;      /* dark background */
+  --panel-text: #fff;    /* light text */
+}
+
+/* output inside panel */
+#output {
+ width: 90%;              /* slightly smaller than panel */
+  max-width: 280px;        /* ensures it doesn’t overflow */
+  margin: 0 auto;          /* center inside panel */
+  font-size: 1rem;         /* smaller text */
+  padding: 10px;  
+}
+
+
+/* universal media queries for responsiveness */
+/* ------------------------------- */
+
+@media screen and (max-width: 1024px) {
+  .container,
+  .container2 {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #Home h1 {
+    font-size: 10rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .exper-item,
+  .skills-list li {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .projects-list li {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list,
+  .skills-list,
+  .connect-list,
+  .exper-list,
+  .portfolio-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-item a {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  h2, h3, h4 {
+    text-align: center;
+  }
+
+  #Home h1 {
+    font-size: 6rem;
+  }
+
+  .projects-list {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #Home h1 {
+    font-size: 4rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exper-item,
+  .skills-list li {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .projects-list li {
+    font-size: 0.95rem;
+  }
+
+  .connect-list {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .projects-list {
+    padding: 10px 15px;
+  }
+}
+button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: pink;
+  color: #225555;
+  border: none;
+  font-family: "Rubik Bubbles", sans-serif;
+  border-radius: 12px;
+}
+
+button:hover {
+  background-color: #bb3e7d;
+  color: #fff;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; /* make extra sure it’s above everything */
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: block; /* hidden by default */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* light mode colors */
+#scrollTopBtn.light {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* dark mode colors */
+#scrollTopBtn.dark {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+#scrollTopBtn:hover {
+  filter: brightness(1.2);
+}
+#scrollTopBtn:active {
+  background-color: #777;
+}
+/* hide nav-list on small screens */
+.nav-list {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+/* hamburger button - hidden on desktop */
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff; /* match nav text color */
+}
+
+/* mobile view */
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    max-height: 0; /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #225555; /* match your nav bg */
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .nav-list.open {
+    max-height: 500px; /* enough to show all items */
+  }
+
+  .nav-item a {
+    padding: 10px 20px;
+  }
+}
+
+/* Repo link styling */
+a {
+  color: white; /* sets all links to white */
+  text-decoration: none; /* optional: removes underline */
+}
+
+a:hover {
+  color: #ccc; /* optional: gives a light gray hover effect */
+}
