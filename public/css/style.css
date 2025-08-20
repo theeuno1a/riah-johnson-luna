@@ -622,7 +622,6 @@ footer {
   100% { transform: translateY(0); }
 }
 
-/* Optional: add a hover bounce */
 .weather-emoji:hover {
   transform: translateY(-10px);
 }
@@ -761,7 +760,7 @@ button:hover {
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 50%;
-  display: block; /* hidden by default */
+  display: block; 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -785,7 +784,7 @@ button:hover {
 #scrollTopBtn:active {
   background-color: #777;
 }
-/* hide nav-list on small screens */
+
 .nav-list {
   transition: max-height 0.3s ease;
   overflow: hidden;
@@ -798,7 +797,7 @@ button:hover {
   background: none;
   border: none;
   cursor: pointer;
-  color: #fff; /* match nav text color */
+  color: #fff; 
 }
 
 /* mobile view */
@@ -808,10 +807,10 @@ button:hover {
   }
 
   .nav-list {
-    max-height: 0; /* hidden by default */
+    max-height: 0; 
     flex-direction: column;
     gap: 10px;
-    background-color: #225555; /* match your nav bg */
+    background-color: #225555; 
     width: 100%;
     border-radius: 8px;
   }
@@ -821,7 +820,7 @@ button:hover {
   }
 
   .nav-list.open {
-    max-height: 500px; /* enough to show all items */
+    max-height: 500px; 
   }
 
   .nav-item a {
@@ -829,12 +828,12 @@ button:hover {
   }
 }
 
-/* Repo link styling */
+/* repo link styling */
 a {
   color: white; /* sets all links to white */
-  text-decoration: none; /* optional: removes underline */
+  text-decoration: none;
 }
 
 a:hover {
-  color: #ccc; /* optional: gives a light gray hover effect */
+  color: #ccc; 
 }
