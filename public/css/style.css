@@ -815,6 +815,10 @@ button:hover {
     width: 100%;
     border-radius: 8px;
   }
+  .nav-list a:focus {
+  outline: 3px solid #fa8ff8;
+  background-color: #f0f0f0;
+  }
 
   .nav-list.open {
     max-height: 500px; /* enough to show all items */
