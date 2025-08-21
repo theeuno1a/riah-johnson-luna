@@ -134,7 +134,7 @@ tempBtn.addEventListener("click", () => {
 });
 
 conditionBtn.addEventListener("click", () => {
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=weather_code`)
     .then(res => res.json())
     .then(data => {
       const code = data.current_weather.weathercode;
@@ -147,7 +147,6 @@ conditionBtn.addEventListener("click", () => {
       emoji.textContent = "🌈";
     });
 });
-
 
 weatherBtn.addEventListener("click", () => {
   weatherContainer.classList.toggle("open");
