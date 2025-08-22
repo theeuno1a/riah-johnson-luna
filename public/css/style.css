@@ -566,7 +566,7 @@ footer {
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -100%;             /* start hidden */
+  right: -100%;             
   transition: right 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   z-index: 100;
   overflow-y: auto; 
@@ -578,7 +578,7 @@ footer {
 }
 
 .weather-container.open {
-  right: 0;            /* slide in */
+  right: 0;            
 }
 
 .weather-container button {
@@ -609,8 +609,8 @@ footer {
 }
 
 .weather-emoji {
-  font-size: 3rem;          /* big enough to notice */
-  margin-bottom: 15px;      /* space from output */
+  font-size: 3rem;          
+  margin-bottom: 15px;      
   transition: transform 0.3s ease;
   animation: float 2s ease-in-out infinite;
   display: inline-block;
@@ -618,7 +618,7 @@ footer {
 
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); } /* float up */
+  50% { transform: translateY(-10px); } 
   100% { transform: translateY(0); }
 }
 
@@ -629,20 +629,20 @@ footer {
 
 #weather-data {
   text-align: center;
-  font-size: 1rem; /* optional, makes it slightly bigger */
+  font-size: 1rem; 
 }
 
 body.dark-mode {
-  --panel-bg: #222;      /* dark background */
-  --panel-text: #fff;    /* light text */
+  --panel-bg: #222;      
+  --panel-text: #fff;    
 }
 
 /* output inside panel */
 #output {
- width: 90%;              /* slightly smaller than panel */
-  max-width: 280px;        /* ensures it doesn’t overflow */
-  margin: 0 auto;          /* center inside panel */
-  font-size: 1rem;         /* smaller text */
+ width: 90%;              
+  max-width: 280px;        
+  margin: 0 auto;         
+  font-size: 1rem;        
   padding: 10px;  
 }
 
@@ -808,10 +808,10 @@ button:hover {
   }
 
   .nav-list {
-    max-height: 0; /* hidden by default */
+    max-height: 0; 
     flex-direction: column;
     gap: 10px;
-    background-color: #225555; /* match your nav bg */
+    background-color: #225555; 
     width: 100%;
     border-radius: 8px;
   }
@@ -829,12 +829,12 @@ button:hover {
   }
 }
 
-/* Repo link styling */
+/* repo link styling */
 a {
   color: white; /* sets all links to white */
-  text-decoration: none; /* optional: removes underline */
+  text-decoration: none; 
 }
 
 a:hover {
-  color: #ccc; /* optional: gives a light gray hover effect */
+  color: #ccc; 
 }
