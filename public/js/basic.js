@@ -74,8 +74,31 @@ const outputDiv = document.getElementById("weather-data");
 const weatherBtn = document.querySelector(".weather-toggle");
 const weatherContainer = document.querySelector(".weather-container");
 
-const latitude = 32.7767;
-const longitude = -96.7970;
+let latitude, longitude;
+
+function getLocation(callback) {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        latitude = pos.coords.latitude;
+        longitude = pos.coords.longitude;
+        callback(); // run whatever you need after coords load
+      },
+      () => {
+        outputDiv.innerHTML = `<p>Location access denied. Showing Dallas weather as fallback.</p>`;
+        latitude = 32.7767;
+        longitude = -96.7970;
+        callback();
+      }
+    );
+  } else {
+    outputDiv.innerHTML = `<p>Geolocation not supported. Showing Dallas weather as fallback.</p>`;
+    latitude = 32.7767;
+    longitude = -96.7970;
+    callback();
+  }
+}
+
 
 function cToF(c) {
   return (c * 9 / 5 + 32).toFixed(1);
@@ -92,7 +115,7 @@ if (!emoji) {
   weatherContainer.prepend(emoji);
 }
 
-function getWeatherDescription(code) {
+function getWeatherDescription(code) { 
   const codes = {
     0: "Clear sky",
     1: "Mainly clear",
@@ -110,42 +133,53 @@ function getWeatherDescription(code) {
 
 function updateWeatherEmoji(code) {
   const condition = getWeatherDescription(code).toLowerCase();
-  if (condition.includes("rain") || condition.includes("drizzle")) emoji.textContent = "🌧️";
-  else if (condition.includes("cloud")) emoji.textContent = "☁️";
-  else if (condition.includes("sun") || condition.includes("clear")) emoji.textContent = "☀️";
+  
+  if (condition.includes("clear")) emoji.textContent = "☀️";
+  else if (condition.includes("mainly clear")) emoji.textContent = "🌤️";
+  else if (condition.includes("partly cloudy")) emoji.textContent = "⛅";
+  else if (condition.includes("overcast")) emoji.textContent = "☁️";
+  else if (condition.includes("fog")) emoji.textContent = "🌫️";
+  else if (condition.includes("drizzle")) emoji.textContent = "🌦️";
+  else if (condition.includes("rain")) emoji.textContent = "🌧️";
   else if (condition.includes("snow")) emoji.textContent = "❄️";
-  else emoji.textContent = "🌈";
+  else if (condition.includes("thunderstorm")) emoji.textContent = "⛈️";
+  else emoji.textContent = "🌈"; // fallback
 }
 
+
 tempBtn.addEventListener("click", () => {
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
-    .then(res => res.json())
-    .then(data => {
-      const tempC = data.current_weather.temperature;
-      const tempF = cToF(tempC);
-      const code = data.current_weather.weathercode;
-      outputDiv.innerHTML = `<p>Current Temperature:<br><strong>${tempC}°C / ${tempF}°F</strong></p>`;
-      updateWeatherEmoji(code);
-    })
-    .catch(() => {
-      outputDiv.innerHTML = `<p>Error loading temperature data</p>`;
-      emoji.textContent = "🌈";
-    });
+  getLocation(() => {
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
+      .then(res => res.json())
+      .then(data => {
+        const tempC = data.current_weather.temperature;
+        const tempF = cToF(tempC);
+        const code = data.current_weather.weathercode;
+        outputDiv.innerHTML = `<p>Current Temperature:<br><strong>${tempC}°C / ${tempF}°F</strong></p>`;
+        updateWeatherEmoji(code);
+      })
+      .catch(() => {
+        outputDiv.innerHTML = `<p>Error loading temperature data</p>`;
+        emoji.textContent = "🌈";
+      });
+  });
 });
 
 conditionBtn.addEventListener("click", () => {
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=weather_code`)
-    .then(res => res.json())
-    .then(data => {
-      const code = data.current_weather.weathercode;
-      const description = getWeatherDescription(code);
-      outputDiv.innerHTML = `<p>Current Condition:<br><strong>${description}</strong></p>`;
-      updateWeatherEmoji(code);
-    })
-    .catch(() => {
-      outputDiv.innerHTML = `<p>Error loading weather condition</p>`;
-      emoji.textContent = "🌈";
-    });
+  getLocation(() => {
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
+      .then(res => res.json())
+      .then(data => {
+        const code = data.current_weather.weathercode;
+        const description = getWeatherDescription(code);
+        outputDiv.innerHTML = `<p>Current Condition:<br><strong>${description}</strong></p>`;
+        updateWeatherEmoji(code);
+      })
+      .catch(() => {
+        outputDiv.innerHTML = `<p>Error loading weather condition</p>`;
+        emoji.textContent = "🌈";
+      });
+  });
 });
 
 weatherBtn.addEventListener("click", () => {
@@ -181,3 +215,4 @@ const navList = document.querySelector(".nav-list");
 navToggle.addEventListener("click", () => {
   navList.classList.toggle("open"); // matches CSS
 });
+

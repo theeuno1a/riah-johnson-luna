@@ -3,6 +3,10 @@ html {
   scroll-padding-top: 60px; /* avoid nav overlap on scroll */
 }
 
+#main-content {
+  flex: 1;
+}
+
 /* wanted to reset default body */
 body {
   background-color: #fff;
@@ -124,6 +128,34 @@ nav {
   margin-top: 0;
 }
 
+.bg h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.2;
+    width: 90%; /* give some breathing room */
+  }
+
+@media screen and (max-width: 480px) {
+  html, body {
+    overflow-x: hidden; /* prevent horizontal scroll */
+  }
+
+  .bg {
+    height: 100dvh; /* forces full mobile height */
+    min-height: 100dvh;
+  }
+
+  .bg h1 {
+    font-size: 10px;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.2;
+    width: 90%; /* give some breathing room */
+  }
+}
+    
+
 /* photo div lines */
 .photo-divider { /* i wanted a line underneath photo cause it'll be cute */
   border: none;
@@ -195,7 +227,8 @@ section {
 }
 
 .exper-list {
-  display: flex;          
+  display: flex;  
+  flex-direction: row;        
   flex-wrap: wrap;        
   gap: 20px;          
   justify-content: center;
@@ -294,7 +327,7 @@ section {
   overflow: hidden;
   text-align: center;
   transition: background-color 0.3s, color 0.3s;
-   position: relative; /* just to allow internal positioning */
+  position: relative; /* just to allow internal positioning */
   z-index: 1; 
 }
 
@@ -367,7 +400,7 @@ section {
 }
 
 input:checked + .slider {
-  background-color: pink; /* changed to pink for visibility */
+  background-color: #DBFF66; /* changed to light green for visibility */
 }
 
 input:checked + .slider::before {
@@ -398,14 +431,14 @@ body.dark-mode .nav-item a {
 }
 
 body.dark-mode .nav-item a:hover {
-  background-color: #333;
-  color: pink;
+  background-color: #DBFF66;
+  color: #ff66b2;
 }
 
 body.dark-mode .active a {
-  background-color: #333;
-  color: pink;
-  border-bottom: 2px solid pink;
+  background-color: #DBFF66;
+  color: #ff66b2;
+  border-bottom: 2px solid #ff66b2;
 }
 
 body.dark-mode .active a:hover {
@@ -418,7 +451,6 @@ body.dark-mode .active a:hover {
 
 /* weather section - dark mode */
 body.dark-mode #output {
-  background-color: #222;   
   color: #eee;              
   border-color: #ff66b2;
 }
@@ -465,7 +497,7 @@ body.dark-mode #leave-message button {
   color: #121212;
 }
 
-body.dark-mode h2, body.dark-mode h3, body.dark-mode #Home h1 {
+body.dark-mode h2, body.dark-mode h3 {
   color: #ff66b2;
 }
 
@@ -473,6 +505,89 @@ body.dark-mode .name,
 body.dark-mode .important-text {
   color: #ff66b2; 
 }
+/* photo divider - dark mode */
+body.dark-mode .photo-divider,
+body.dark-mode .photo-divider2 {
+  background-color: hsl(74, 100%, 70%);
+}
+
+/* all the list sections - dark mode */
+
+body.dark-mode .exper-list,
+body.dark-mode .skills-list,
+body.dark-mode .projects-list {
+  background-color: hsl(74, 43%, 44%);
+}
+
+body.dark-mode .exper-item,
+body.dark-mode #Skills .skills-list li {
+  background-color: hsl(74, 100%, 70%);
+  color: black;
+}
+
+body.dark-mode .projects-list li {
+  background-color: hsl(74, 100%, 70%);
+  color: black;
+  border-left: 4px solid #ff66b2; 
+}
+
+body.dark-mode .projects-list li a {
+  color: black;
+}
+
+body.dark-mode .projects-list li a:hover {
+  color: #ff66b2;
+}
+body.dark-mode .connect-list img {
+  border-radius: 50%; /* makes the glow circular */
+  box-shadow: 0 0 10px hsl(74, 100%, 70%),
+              0 0 20px hsl(74, 100%, 70%),
+              0 0 30px hsl(74, 100%, 70%);
+  transition: box-shadow 0.3s ease;
+}
+
+body.dark-mode .connect-list img:hover {
+  box-shadow: 0 0 15px hsl(75, 94%, 93%),
+              0 0 25px hsl(75, 94%, 93%),
+              0 0 40px hsl(75, 94%, 93%);
+}
+
+/* footer styles - dark mode */
+
+body.dark-mode footer {
+  background: linear-gradient(135deg, #DBFF66 0%, #FF66B2 100%);
+  color: black;
+}
+
+/* extra styles - dark mode */
+
+body.dark-mode .nav-list {
+  background-color: transparent;
+}
+
+body.dark-mode .bg {
+  background-image: url("https://i.pinimg.com/originals/58/5f/b8/585fb871dc5698ad1b71f838072cc335.gif");
+  background-size: cover;
+  background-position: center;
+}
+
+body.dark-mode #Home h1 { 
+  animation: floatText 3s ease-in-out infinite;
+  display: inline-block; 
+  background: linear-gradient(135deg, #DBFF66 0%, #FF66B2 100%); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  display: inline-block;
+}
+
+@keyframes floatText {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); } /* moves up */
+  100% { transform: translateY(0); }
+
+}
+
 
 /*footer styles*/
 footer {
@@ -529,7 +644,7 @@ footer {
   background-color: #336b6b;
 }
 
-/* message section */
+/* ========== Message Section ========== */
 .messages-section {
   margin-top: 30px;
   background-color: #eee;
@@ -540,6 +655,7 @@ footer {
 #messages ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 #messages li {
@@ -547,11 +663,50 @@ footer {
   border-bottom: 1px solid #ccc;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #messages li:last-child {
   border-bottom: none;
 }
+
+/* Remove button */
+#messages li button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: pink;
+  color: #225555;
+  font-family: 'Rubik Bubbles', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#messages li button:hover {
+  background-color: #84164d;
+  color: #fff;
+}
+
+/* message links */
+#messages li a.message-link {
+  color: #ff66b2; /* pink */
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Impact', Arial Narrow Bold, sans-serif;
+}
+
+#messages li a.message-link:hover {
+  color: grey; /* hover grey */
+  text-decoration: underline;
+}
+
+/* message text */
+#messages li span {
+  color: black; /* comment text */
+}
+
 
 /* weather section */
 .weather-container {
@@ -622,7 +777,6 @@ footer {
   100% { transform: translateY(0); }
 }
 
-/* Optional: add a hover bounce */
 .weather-emoji:hover {
   transform: translateY(-10px);
 }
@@ -632,14 +786,37 @@ footer {
   font-size: 1rem; 
 }
 
-body.dark-mode {
-  --panel-bg: #222;      
-  --panel-text: #fff;    
+body.dark-mode .weather-toggle {
+  background: #DBFF66;
+  color: #000000;
+}
+
+body.dark-mode .weather-container {
+  background: linear-gradient(90deg, #000000, #ff4c99);
+  color: var(--panel-text);
+}
+
+body.dark-mode .weather-container button {
+  background: hsl(0, 0%, 100%);
+  color: black;
+}
+
+body.dark-mode .weather-container button:hover {
+  transform: scale(1.05);
+  background-color: #e1acc3;
+  box-shadow: 0 0 20px #ff4c99, 0 0 40px #ff4c99, 0 0 60px #ff4c99;
+  color: rgb(255, 255, 255);
+
+}
+
+body.dark-mode #output {
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
 }
 
 /* output inside panel */
 #output {
- width: 90%;              
+  width: 90%;              
   max-width: 280px;        
   margin: 0 auto;         
   font-size: 1rem;        
@@ -679,13 +856,21 @@ body.dark-mode {
 @media screen and (max-width: 768px) {
   .nav-list,
   .skills-list,
-  .connect-list,
   .exper-list,
   .portfolio-list {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
+
+@media screen and (max-width: 768px) {
+  .connect-list {
+    flex-direction: row;   
+    flex-wrap: wrap;       
+    gap: 20px;             
+    justify-content: center;
+  }
+}
 
   .nav-item a {
     font-size: 1rem;
@@ -746,7 +931,7 @@ button {
 }
 
 button:hover {
-  background-color: #bb3e7d;
+  background-color: #84164d;
   color: #fff;
 }
 
@@ -761,22 +946,15 @@ button:hover {
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 50%;
-  display: block; /* hidden by default */
+  display: block; 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* light mode colors */
-#scrollTopBtn.light {
-  background-color: #fff;
-  color: #333;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
 /* dark mode colors */
-#scrollTopBtn.dark {
-  background-color: #333;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+body.dark-mode #scrollTopBtn {
+  background-color: #DBFF66; 
+  color: black;
+  box-shadow: 0 0 10px #ff66b2, 0 0 20px #ff66b2, 0 0 30px #ff66b2;
 }
 
 #scrollTopBtn:hover {
@@ -798,7 +976,7 @@ button:hover {
   background: none;
   border: none;
   cursor: pointer;
-  color: #fff; /* match nav text color */
+  color: #fff; 
 }
 
 /* mobile view */
@@ -821,7 +999,7 @@ button:hover {
   }
 
   .nav-list.open {
-    max-height: 500px; /* enough to show all items */
+    max-height: 500px; 
   }
 
   .nav-item a {
@@ -831,7 +1009,7 @@ button:hover {
 
 /* repo link styling */
 a {
-  color: white; /* sets all links to white */
+  color: white; 
   text-decoration: none; 
 }
 
