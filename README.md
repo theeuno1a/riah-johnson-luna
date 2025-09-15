@@ -1,4 +1,4 @@
-a# Riah Johnson Luna - Lesson 12
+# Riah Johnson Luna - Lesson 12
 
 Welcome to the **Riah Johnson Luna** project, developed as part of the **Intro to Programming v5** course. This project showcases the application of fundamental programming concepts to create interactive web experiences.
 
@@ -31,3 +31,4 @@ To view or contribute to this project:
 1. Clone the repository:
    ```bash
    git clone https://github.com/theeuno1a/riah-johnson-luna.git
+
