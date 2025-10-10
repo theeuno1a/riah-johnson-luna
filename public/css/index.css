@@ -95,10 +95,15 @@ nav {
 /* tablets */
 @media screen and (max-width: 768px) { 
   #Home h1, h1 {
-    font-size: 3rem;
+    font-size: 1rem;
     text-align: center;
     word-wrap: break-word;
   }
+
+.nav-toggle:hover {
+  background-color: #DBFF66;
+  color: #FF66B2;
+}
 
   .skills-list li {
     padding: 10px;
@@ -202,10 +207,44 @@ nav {
   opacity: 0.80;
 }
 
+
+#Experience, #Projects h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 h2 {
   margin-bottom: 15px;
   font-weight: bold;
   font-family: Cambria;
+}
+
+#Connect h2 {
+  margin-bottom: 15px;
+  font-size: 80px;
+  font-weight: bold;
+  font-family: Cambria;
+  text-align: center;
+  font-style: italic;
+  text-shadow: rgb(122, 122, 122) 4px 3px 0px;
+  color: black;
+  transform: translateY(-60px);
+
+}
+
+body.dark-mode #Connect h2 {
+  color: #dcff67;
+  text-shadow: #ff66b2 4px 3px 0px;
+
+}
+
+#leave-message h2 {
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Cambria;
+  text-align: center;
+  color: #000000;
 }
 
 h3 {
@@ -213,6 +252,18 @@ h3 {
   font-family: 'Times New Roman', serif;
   text-align: center;
 }
+
+#Skills h3 {
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+  color: #000000;
+}
+
+body.dark-mode #Skills h3 {
+  color: white;
+}
+
 
 h4 {
   margin-bottom: 10px;
@@ -270,6 +321,8 @@ section {
   border-radius: 5px;
   list-style: none;
   justify-content: center;
+  align-content: center;
+  flex-flow: row wrap;
 }
 
 .skills-list li {
@@ -316,6 +369,7 @@ section {
   align-items: center;
   padding: 0;
   margin: 0;
+  transform: translateY(-35px);
 }
 
 .website-card {
@@ -689,6 +743,21 @@ footer {
   color: #fff;
 }
 
+body.dark-mode #messages li button {
+  background-color: #DBFF66;
+  color: black;
+}
+
+body.dark-mode #messages li button:hover {
+  background-color: #e1acc3;
+  box-shadow: 0 0 20px #ff4c99, 0 0 40px #ff4c99, 0 0 60px #ff4c99;
+  color: rgb(255, 255, 255);
+}
+
+body.dark-mode #leave-message h2 {
+  color: #ff66b2;
+}
+
 /* message links */
 #messages li a.message-link {
   color: #ff66b2; /* pink */
@@ -892,7 +961,17 @@ body.dark-mode #output {
 
 @media screen and (max-width: 480px) {
   #Home h1 {
-    font-size: 4rem;
+    font-size: 50px;
+  }
+
+  #Connect h2 {
+    font-size: 60px;
+  }
+
+ #About p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
   }
 
   .nav-list {
@@ -931,7 +1010,7 @@ button {
 }
 
 button:hover {
-  background-color: #84164d;
+  background-color: pink;
   color: #fff;
 }
 
@@ -973,16 +1052,19 @@ body.dark-mode #scrollTopBtn {
 .nav-toggle {
   display: none;
   font-size: 2rem;
-  background: none;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   color: #fff; 
 }
 
+
 /* mobile view */
 @media screen and (max-width: 768px) {
   .nav-toggle {
     display: block;
+    background-color: transparent;
+
   }
 
   .nav-list {
