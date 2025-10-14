@@ -5,20 +5,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Riah Johnson — creative entrepreneur, IT specialist, and cosmetologist passionate about tech, design, and innovation. Explore projects, skills, and ways to connect." />
-  <link rel="stylesheet" href="./css/style.css" />
-  <script src="./js/basic.js" defer></script>
+  <link rel="stylesheet" href="./css/index.css" />
+  <script src="./js/index.js" defer></script>
   <script type="module" src="./js/firebase.js"></script>
 
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+     <canvas id="starfield"></canvas>
  <nav>
-  <button class="nav-toggle" aria-label="Toggle navigation">
-    &#9776; <!-- hamburger icon -->
+  <button class="nav-toggle" aria-label="Toggle navigation"> &#9776; <!-- hamburger icon -->
   </button>
 
   <ul class="nav-list">
@@ -30,6 +31,8 @@
     <li class="nav-item"><a href="#Connect">CONNECT</a></li>
     <li class="nav-item"><a href="#website">WEBSITE</a></li>
     <li class="nav-item"><a href="#leave-message">MESSAGE</a></li>
+    <li class="nav-item"><a href="gamepage.html">GAME</a></li>
+
   </ul>
 </nav>
 
@@ -74,6 +77,20 @@
 
 
   <div id="main-content" class="container2">
+
+<div id="welcome-popup">
+  <h5>WELCOME TO MY WEBSITE! 👋🏽</h5>
+  <hr class="photo-divider" />
+    <p>"I’m really glad you stopped by. I designed this space with love, a lottt of time, and effort, so I hope you enjoy exploring and seeing what I’ve been working on. If you’ve got a sec, drop me a quick note below — tell me how you found my site, how we know each other, or what caught your eye!</p>
+
+    <p>I love hearing from people and connecting with new faces. Wanna know more about me?</p>
+    <p>Just click the link down below to learn a little bit more about who I am and what I do. Thanks for visiting — it honestly means a lot." </p>
+
+    <p><b>— Riah 💝</b></p>
+  <button id="close-popup">CLOSE</button>
+</div>
+
+
     <section id="About">
       <h2>ABOUT</h2>
       <p>
@@ -85,6 +102,7 @@
         and I’m constantly exploring new ways to blend both. This journey is just getting started, and I’m excited to keep leveling up!
       </p>
     </section>
+
 
     <!-- experience section -->
 
@@ -102,8 +120,7 @@
 <section id="Skills">
   <h2>SKILLS</h2>
   <h3>TECH & PROGRAMMING</h3>
-  <ul class="skills-list">
-  </ul>
+  <ul class="skills-list"></ul>
 
   <h3>CREATIVE & DESIGNS</h3>
     <ul class="skills-list">
@@ -144,7 +161,7 @@
     <!-- content -->
     <div class="website-content">
       <h2>MY WEBSITE</h2>
-      <p>Click below to explore my work, portfolio, and more.</p>
+      <p>Click below to explore my personal website where I showcase my work, portfolio, and more.</p>
       <a href="https://readymag.website/u1590588250/TSE/" target="_blank" class="website-btn">
         Visit Website
       </a>
@@ -213,7 +230,7 @@
     <!-- footer section -->
 
   <hr class="photo-divider2" />
-  <footer></footer> <!-- i got stuck here for a while on the footer part trying to use js since that was new . i watched a couple youtube videos and pinterest so it could break it down more so i can understand -->
+  <footer></footer>
   
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
