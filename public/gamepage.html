@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Riah Johnson | Game Section</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Portfolio of Riah Johnson — creative entrepreneur, IT specialist, and cosmetologist passionate about tech, design, and innovation. Explore projects, skills, and ways to connect." />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/game.css" />
+        <!-- JS -->
+          <script src="./js/index.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="kirby.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <!-- Canvas stars background -->
+      <canvas id="starfield"></canvas>
+
+      <!-- Navigation -->
+      <nav>
+          <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+          <ul class="nav-list">
+              <li class="nav-item"><a href="index.html">HOME</a></li>
+              <li class="nav-item"><a href="index.html#About">ABOUT</a></li>
+              <li class="nav-item"><a href="index.html#Experience">EXPERIENCE</a></li>
+              <li class="nav-item"><a href="index.html#Skills">SKILLS</a></li>
+              <li class="nav-item"><a href="index.html#Projects">PROJECTS</a></li>
+              <li class="nav-item"><a href="index.html#Connect">CONNECT</a></li>
+              <li class="nav-item"><a href="index.html#website">WEBSITE</a></li>
+              <li class="nav-item"><a href="index.html#leave-message">MESSAGE</a></li>
+              <li class="nav-item active"><a href="gamepage.html">GAME</a></li>
+
+          </ul>
+
+      </nav>
+
+   <!-- theme toggle switch -->
+  <label class="theme-switch" title="Toggle Light/Dark Mode">
+    <input type="checkbox" id="toggle-theme" />
+    <span class="slider"></span>
+  </label>
+
+ <div class="container">
+  <section class="bg" id="GAME">
+    <h1>GAME SECTION</h1>
+  </section>
+
+  <!-- slide-out weather panel -->
+  <div class="weather-container">
+
+<div class="weather-emoji" id="weather-emoji">☀</div>
+
+
+    <section id="output">
+      <h4>Weather</h4>
+      <div id="weather-data">Click a button to load data</div>
+    </section>
+
+    <button id="temp-btn">Show Temperature</button>
+    <button id="condition-btn">Show Conditions</button>
+
+  </div>
+
+  <!-- toggle button -->
+  <button class="weather-toggle" aria-label="Toggle Weather">☀</button>
+</div>
+
+<hr class="photo-divider" />
+
+<section id="game-section" class="under-construction">
+  <h2>🚧 Under Construction 🚧</h2>
+  <div class="construction-visual">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGRxcm0yaWFmcGt4bWVtcGNkbDZ0ZHI0bDJtZ2x4bHhocG42ZThsNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/108o2iMGnu4aac/giphy.gif" alt="Kirby working" />
+  </div>
+  <p>Hey there! This section is currently being added. New games and interactive content will be available soon.</p>
+    <p>Check back later for the full experience 💫</p>
+</section>
+
+
+  <!-- scroll to top -->
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+
+<hr class="photo-divider2" />
+<footer></footer>
+
+  <script>
+  function openGame(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+
+function closeGame(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+</script>
+</body>
+</html>
+

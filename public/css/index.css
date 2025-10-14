@@ -159,8 +159,6 @@ nav {
     width: 90%; /* give some breathing room */
   }
 }
-    
-
 /* photo div lines */
 .photo-divider { /* i wanted a line underneath photo cause it'll be cute */
   border: none;
@@ -468,7 +466,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-  background-color: #121212;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -1097,4 +1095,91 @@ a {
 
 a:hover {
   color: #ccc; 
+}
+
+/* Make sure the canvas is behind everything */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  display: none; /* hidden by default (light mode) */
+}
+
+/* When dark mode is active */
+body.dark-mode #starfield {
+  display: block;
+}
+
+#starfield {
+  transition: opacity 0.8s ease;
+  opacity: 0;
+}
+#starfield.active {
+  opacity: 1;
+}
+
+/* welcome popup container */
+#welcome-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: #333;
+  padding: 30px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.446);
+  z-index: 9999;
+  display: block;
+  transition: opacity 0.8s ease;
+}
+
+#welcome-popup.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* welcome close button */
+#welcome-popup button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background: pink;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 8px #84164d;
+}
+
+#welcome-popup button:hover {
+  background: #84164d;
+  box-shadow: 0 0 20px #ff4c99, 0 0 40px #ff4c99, 0 0 60px #ff4c99;
+}
+
+h5 {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Rubik Bubbles', Courier, monospace;
+}
+
+body.dark-mode h5 {
+  color: #ff66b2;
+}
+
+body.dark-mode #welcome-popup {
+  background: #000000;
+  color: #eee;
+  box-shadow: 0 0 20px #ff4c99, 0 0 40px #ff4c99, 0 0 60px #ff4c99;
+}
+
+body.dark-mode #welcome-popup button {
+  background: #DBFF66;
+  color: black;
 }
