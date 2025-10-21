@@ -71,52 +71,6 @@ nav {
   border-bottom: 2px solid #000;
 }
 
-/* both responsive nav for mobile and tablet */
-@media screen and (max-width: 600px) {
-  nav {
-    padding: 10px;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-item a {
-    padding: 10px;
-    font-size: 1rem;
-  }
-
-  .active a {
-    border-bottom: none; /* remove border for mobile */
-  }
-}
-
-/* tablets */
-@media screen and (max-width: 768px) { 
-  #Home h1, h1 {
-    font-size: 1rem;
-    text-align: center;
-    word-wrap: break-word;
-  }
-
-.nav-toggle:hover {
-  background-color: #DBFF66;
-  color: #FF66B2;
-}
-
-  .skills-list li {
-    padding: 10px;
-    font-size: 0.9rem;
-    word-wrap: break-word;
-  }
-
-  .exper-item {
-    padding: 10px;
-    font-size: 0.95rem;
-    word-wrap: break-word;
-  }
-}
 
 /* bg image container */
 .bg {
@@ -140,25 +94,6 @@ nav {
     line-height: 1.2;
     width: 90%; /* give some breathing room */
   }
-
-@media screen and (max-width: 480px) {
-  html, body {
-    overflow-x: hidden; /* prevent horizontal scroll */
-  }
-
-  .bg {
-    height: 100dvh; /* forces full mobile height */
-    min-height: 100dvh;
-  }
-
-  .bg h1 {
-    font-size: 10px;
-    text-align: center;
-    padding: 0 10px;
-    line-height: 1.2;
-    width: 90%; /* give some breathing room */
-  }
-}
 /* photo div lines */
 .photo-divider { /* i wanted a line underneath photo cause it'll be cute */
   border: none;
@@ -185,13 +120,6 @@ nav {
   display: block;
   justify-content: center;
   margin-bottom: -20px; /* space below the footer */
-}
-
-/* responsive style for photo-divider */
-@media screen and (max-width: 768px) {
-  .photo-divider {
-    width: 100%;
-  }
 }
 
 /* headings */
@@ -519,16 +447,6 @@ body.dark-mode .website-btn {
   background-color: #ff66b2;
   color: #fff;
 }
-
-@media screen and (max-width: 768px) {
-  #website {
-    padding: 30px 15px;
-  }
-
-  .website-card {
-    max-width: 100%;
-  }
-}
 /* leave a message - dark mode */
 body.dark-mode #leave-message {
   background-color: #222;   
@@ -696,7 +614,7 @@ footer {
   background-color: #336b6b;
 }
 
-/* ========== Message Section ========== */
+/* ========== message section ========== */
 .messages-section {
   margin-top: 30px;
   background-color: #eee;
@@ -890,112 +808,6 @@ body.dark-mode #output {
   padding: 10px;  
 }
 
-
-/* universal media queries for responsiveness */
-/* ------------------------------- */
-
-@media screen and (max-width: 1024px) {
-  .container,
-  .container2 {
-    width: 95%;
-    padding: 15px;
-  }
-
-  #Home h1 {
-    font-size: 10rem;
-    text-align: center;
-    word-wrap: break-word;
-  }
-
-  .exper-item,
-  .skills-list li {
-    width: 100%;
-    max-width: 300px;
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  .projects-list li {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .nav-list,
-  .skills-list,
-  .exper-list,
-  .portfolio-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-@media screen and (max-width: 768px) {
-  .connect-list {
-    flex-direction: row;   
-    flex-wrap: wrap;       
-    gap: 20px;             
-    justify-content: center;
-  }
-}
-
-  .nav-item a {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  h2, h3, h4 {
-    text-align: center;
-  }
-
-  #Home h1 {
-    font-size: 6rem;
-  }
-
-  .projects-list {
-    padding: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #Home h1 {
-    font-size: 50px;
-  }
-
-  #Connect h2 {
-    font-size: 60px;
-  }
-
- #About p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    text-align: left;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .exper-item,
-  .skills-list li {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .projects-list li {
-    font-size: 0.95rem;
-  }
-
-  .connect-list {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .projects-list {
-    padding: 10px 15px;
-  }
-}
 button {
   margin-left: 10px;
   padding: 10px 15px;
@@ -1057,36 +869,6 @@ body.dark-mode #scrollTopBtn {
 }
 
 
-/* mobile view */
-@media screen and (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    background-color: transparent;
-
-  }
-
-  .nav-list {
-    max-height: 0; 
-    flex-direction: column;
-    gap: 10px;
-    background-color: #225555; 
-    width: 100%;
-    border-radius: 8px;
-  }
-  .nav-list a:focus {
-  outline: 3px solid #fa8ff8;
-  background-color: #f0f0f0;
-  }
-
-  .nav-list.open {
-    max-height: 500px; 
-  }
-
-  .nav-item a {
-    padding: 10px 20px;
-  }
-}
-
 /* repo link styling */
 a {
   color: white; 
@@ -1097,7 +879,7 @@ a:hover {
   color: #ccc; 
 }
 
-/* Make sure the canvas is behind everything */
+/* to ensure the canvas is behind everything */
 #starfield {
   position: fixed;
   top: 0;
@@ -1109,7 +891,7 @@ a:hover {
   display: none; /* hidden by default (light mode) */
 }
 
-/* When dark mode is active */
+/* when dark mode is active */
 body.dark-mode #starfield {
   display: block;
 }
@@ -1183,3 +965,299 @@ body.dark-mode #welcome-popup button {
   background: #DBFF66;
   color: black;
 }
+
+/* ==============================
+    responsive design
+    ============================== */
+
+/* ==============================
+   extra small devices (phones, 600px and down)
+   ============================== */
+@media only screen and (max-width: 600px) {
+
+  /* containers */
+  .container,
+  .container2 {
+    width: 95%;
+    padding: 15px;
+  }
+
+  /* navigation */
+  nav {
+    padding: 10px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-item a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .active a {
+    border-bottom: none;
+  }
+
+  /* welcome popup */
+  #welcome-popup {
+    padding: 20px;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  #welcome-popup button {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  /* bg adjustments */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .bg {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
+  .bg h1 {
+    font-size: 10px;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.2;
+    width: 90%;
+  }
+
+  /* connect & exper lists */
+  .connect-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .exper-item,
+  .skills-list li {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .projects-list li {
+    font-size: 0.95rem;
+  }
+
+  .projects-list {
+    padding: 10px 15px;
+  }
+
+}
+
+/* ==============================
+   small devices (portrait tablets & large phones, 600px and up)
+   ============================== */
+@media only screen and (max-width: 768px) {
+
+  /* Containers */
+  .container,
+  .container2 {
+    width: 95%;
+    padding: 15px;
+  }
+
+  /* Navigation */
+  .nav-list,
+  .skills-list,
+  .exper-list,
+  .portfolio-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .connect-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .nav-toggle {
+    display: block;
+    background-color: transparent;
+  }
+
+  .nav-list {
+    max-height: 0;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #225555;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .nav-list.open {
+    max-height: 500px;
+  }
+
+  .nav-list a:focus {
+    outline: 3px solid #fa8ff8;
+    background-color: #f0f0f0;
+  }
+
+  .nav-item a {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  /* website section */
+  #website {
+    padding: 30px 15px;
+  }
+
+  .website-card {
+    max-width: 100%;
+  }
+
+  /* home / headings */
+  #Home h1, h1 {
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  h2, h3, h4 {
+    text-align: center;
+  }
+
+  /* skills & experience */
+  .skills-list li {
+    padding: 10px;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+  }
+
+  .exper-item {
+    padding: 10px;
+    font-size: 0.95rem;
+    word-wrap: break-word;
+  }
+
+/* projects */
+  .projects-list {
+    padding: 15px;
+  }
+
+  .projects-list li {
+    font-size: 1rem;
+  }
+
+  /* photo divider */
+  .photo-divider {
+    width: 100%;
+  }
+
+  /* nav hover */
+  .nav-toggle:hover {
+    background-color: #9ebcbc;
+    color: #f7f7f7;
+  }
+
+}
+
+/* ==============================
+   medium devices (landscape tablets, 768px and up)
+   ============================== */
+@media only screen and (max-width: 992px) {
+  #Home h1 {
+    font-size: 10rem;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .exper-item,
+  .skills-list li {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 12px;
+    word-wrap: break-word;
+
+  }
+}
+
+/* ==============================
+   extra extra small devices (phones, 400px and down)
+   ============================== */
+@media only screen and (max-width: 400px) {
+  /* Welcome popup adjustments */
+  #welcome-popup {
+    padding: 16px;
+    width: 95%;
+    max-width: 280px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+  #Connect h2 {
+    font-size: 50px;
+    transform: translateY(-40px);
+}
+
+/* ==============================
+   home / headings responsive
+   ============================== */
+
+/* default desktop font */
+#Home h1, h1 {
+  font-size: 10rem;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* large tablets / smaller desktops */
+@media only screen and (max-width: 992px) {
+  #Home h1 {
+    font-size: 8rem;
+  }
+}
+
+/* small devices / portrait tablets */
+@media only screen and (max-width: 768px) {
+  #Home h1 {
+    font-size: 6rem;
+  }
+  #Connect h2 {
+    font-size: 50px;
+    transform: translateY(-40px); 
+  }
+}
+
+/* extra small devices / phones 600px and down */
+@media only screen and (max-width: 600px) {
+  #Home h1 {
+    font-size: 4rem;
+  }
+  #Connect h2 {
+    font-size: 50px;
+    transform: translateY(-40px); 
+  }
+}
+
+/* extra extra small / very small phones 400px and down */
+@media only screen and (max-width: 400px) {
+  #Home h1 {
+    font-size: 3rem;
+  }
+  #Connect h2 {
+    font-size: 50px;
+    transform: translateY(-40px); 
+  }
+}
+/* end of css file */
