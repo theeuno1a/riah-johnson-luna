@@ -1,4 +1,4 @@
-# **Welcome to Ryan, Johnson, and Luna!**
+# **Welcome to Riah Johnson Luna!**
 
 This is a personal portfolio project developed as part of the *Intro to Programming* course. It showcases the application of fundamental programming concepts through a responsive, interactive web application. The project highlights creativity, technical skills, and critical practices in web development.
 
@@ -29,3 +29,4 @@ To view or contribute to this project, follow these steps:
 1. Clone the repository:
 ```bash
 git clone <your-repository-URL>
+
