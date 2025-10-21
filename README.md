@@ -1,34 +1,31 @@
-# Riah Johnson Luna - Lesson 12
+# **Welcome to Ryan, Johnson, and Luna!**
 
-Welcome to the **Riah Johnson Luna** project, developed as part of the **Intro to Programming v5** course. This project showcases the application of fundamental programming concepts to create interactive web experiences.
+This is a personal portfolio project developed as part of the *Intro to Programming* course. It showcases the application of fundamental programming concepts through a responsive, interactive web application. The project highlights creativity, technical skills, and critical practices in web development.
 
-## 📚 Overview
+---
 
-This repository contains the code and resources for Lesson 12, focusing on:
+## About the Project
 
-- **HTML5**: Structuring web content.
-- **CSS3**: Styling and layout techniques.
-- **JavaScript**: Implementing interactivity and logic.
+This portfolio project is designed to present my work, experience, and skills in a clear and interactive way. It includes:
 
-The project demonstrates the integration of these technologies to build dynamic and responsive web applications.
+- **Responsive Design**: Adapts seamlessly to different screen sizes and devices.  
+- **Interactive Elements**: Engaging user interface with hover effects, navigation menus, and dynamic content.  
+- **Critical Practices**: Clean, organized code that follows best practices for maintainability and readability.
 
-## 🧪 Features
+---
 
-- **Responsive Design**: Ensures usability across various devices.
-- **Interactive Elements**: Engages users with dynamic content.
-- **Clean Code Practices**: Demonstrates best practices in coding standards.
+## Technologies Used
 
-## ⚙️ Technologies Used
+- **HTML5** – Structuring content with semantic elements  
+- **CSS3** – Styling, layouts, responsive design, and animations  
+- **JavaScript** – Interactive functionality and dynamic features  
 
-- **HTML5**: For semantic and accessible markup.
-- **CSS3**: For modern styling and layout techniques.
-- **JavaScript**: For adding interactivity and functionality.
+---
 
-## 🚀 Getting Started
+## Getting Started
 
-To view or contribute to this project:
+To view or contribute to this project, follow these steps:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/theeuno1a/riah-johnson-luna.git
-
+```bash
+git clone <your-repository-URL>
